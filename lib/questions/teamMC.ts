@@ -3,6 +3,7 @@ import { Question } from "../types";
 export const teamMCQuestions: Question[] = [
   {
     id: "tmc-1",
+    gradeLevel: "7-8",
     sectionId: "team-mc",
     questionText: "What is the remainder when 60 is divided by 7?",
     correctAnswer: "B",
@@ -22,6 +23,7 @@ export const teamMCQuestions: Question[] = [
   },
   {
     id: "tmc-2",
+    gradeLevel: "7-8",
     sectionId: "team-mc",
     questionText: "When A is divided by 12, the remainder is 11. When A is divided by 15, the remainder is 2. What is the largest 2-digit value of A?",
     correctAnswer: "D",
@@ -42,6 +44,7 @@ export const teamMCQuestions: Question[] = [
   },
   {
     id: "tmc-3",
+    gradeLevel: "7-8",
     sectionId: "team-mc",
     questionText: "What is the remainder when 2²⁰²⁵ is divided by 40?",
     correctAnswer: "E",
@@ -62,6 +65,7 @@ export const teamMCQuestions: Question[] = [
   },
   {
     id: "tmc-4",
+    gradeLevel: "7-8",
     sectionId: "team-mc",
     questionText: "Solve for x: 20 + 15x = 260",
     correctAnswer: "C",

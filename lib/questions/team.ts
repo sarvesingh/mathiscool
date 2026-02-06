@@ -3,6 +3,7 @@ import { Question } from "../types";
 export const teamQuestions: Question[] = [
   {
     id: "team-1",
+    gradeLevel: "7-8",
     sectionId: "team",
     questionText: "Evaluate: (3 − 6)³ ÷ (−9) − 17 + ((−5)² − 1)",
     correctAnswer: "10",
@@ -16,6 +17,7 @@ export const teamQuestions: Question[] = [
   },
   {
     id: "team-2",
+    gradeLevel: "7-8",
     sectionId: "team",
     questionText: "In the 8th grade class of Park Middle School, there are 87 students. One-third have a dog. 23 have a cat and 15 have both a dog and a cat. How many of the 87 students don't have a cat or a dog?",
     correctAnswer: "50",
@@ -30,6 +32,7 @@ export const teamQuestions: Question[] = [
   },
   {
     id: "team-3",
+    gradeLevel: "7-8",
     sectionId: "team",
     questionText: "How many positive prime numbers less than 50 have 2 as at least one of their digits?",
     correctAnswer: "3",
@@ -43,6 +46,7 @@ export const teamQuestions: Question[] = [
   },
   {
     id: "team-4",
+    gradeLevel: "7-8",
     sectionId: "team",
     questionText: "As a common fraction, the median of the data set {4/7, 0.6, 5/8, 0.75, 5/12} is A/B. What is A + B?",
     correctAnswer: "8",
@@ -56,6 +60,7 @@ export const teamQuestions: Question[] = [
   },
   {
     id: "team-5",
+    gradeLevel: "7-8",
     sectionId: "team",
     questionText: "Tanishi has $4.37 in coins that consist only of quarters, dimes, nickels, and pennies. She has one nickel among her coins. What is the smallest total number of coins she could have?",
     correctAnswer: "22",
@@ -70,6 +75,7 @@ export const teamQuestions: Question[] = [
   },
   {
     id: "team-6",
+    gradeLevel: "7-8",
     sectionId: "team",
     questionText: "A particular number series increases alternately by adding 14 and then by multiplying by 1/4. For example, if the first term is 18, the next four terms would be 32, 8, 22, 22/4, and so on. What is the smallest possible integer in the series if the first term is 346?",
     correctAnswer: "5",
@@ -83,6 +89,7 @@ export const teamQuestions: Question[] = [
   },
   {
     id: "team-7",
+    gradeLevel: "7-8",
     sectionId: "team",
     questionText: "If N is a perfect cube and a factor of 11!, what is the largest value of N?",
     correctAnswer: "1728",
@@ -96,6 +103,7 @@ export const teamQuestions: Question[] = [
   },
   {
     id: "team-8",
+    gradeLevel: "7-8",
     sectionId: "team",
     questionText: "In a hand of 6 cards there are 2 hearts, 2 diamonds, and 2 clubs. The cards are randomly selected one at a time without replacement and laid on a table. As a reduced common fraction, the probability that the 4th card laid on the table is a heart is A/B. What is A + B?",
     correctAnswer: "4",

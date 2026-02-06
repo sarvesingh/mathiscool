@@ -4,6 +4,7 @@ export const collegeBowlQuestions: Question[] = [
   // ── Round 1 ──
   {
     id: "cb1-1",
+    gradeLevel: "7-8",
     sectionId: "cb-round-1",
     questionText: "How many even integers are there between 11 and 49?",
     correctAnswer: "19",
@@ -16,6 +17,7 @@ export const collegeBowlQuestions: Question[] = [
   },
   {
     id: "cb1-2",
+    gradeLevel: "7-8",
     sectionId: "cb-round-1",
     questionText: "If 3x + 4y = 65 and x = 11, what does y equal?",
     correctAnswer: "8",
@@ -28,6 +30,7 @@ export const collegeBowlQuestions: Question[] = [
   },
   {
     id: "cb1-3",
+    gradeLevel: "7-8",
     sectionId: "cb-round-1",
     questionText: "Biff can prepare 16 bags of tater tots in 20 minutes. Eho prepares tater tots at a rate that is twice as fast as Biff. How many minutes does it take Eho to prepare 24 bags of tater tots?",
     correctAnswer: "15",
@@ -41,6 +44,7 @@ export const collegeBowlQuestions: Question[] = [
   },
   {
     id: "cb1-4",
+    gradeLevel: "7-8",
     sectionId: "cb-round-1",
     questionText: "A bag of M&Ms contains 10 green, 22 brown, 6 red, 7 yellow, and 5 blue. If one M&M is randomly chosen, what is the probability in percent that it is not yellow?",
     correctAnswer: "86",
@@ -53,6 +57,7 @@ export const collegeBowlQuestions: Question[] = [
   },
   {
     id: "cb1-5",
+    gradeLevel: "7-8",
     sectionId: "cb-round-1",
     questionText: "An 8-inch-by-8-inch square is cut into as many 2-inch-by-3-inch rectangles as possible, such that there is only one scrap leftover. In inches, what is the perimeter of the scrap?",
     correctAnswer: "8",
@@ -66,6 +71,7 @@ export const collegeBowlQuestions: Question[] = [
   },
   {
     id: "cb1-6",
+    gradeLevel: "7-8",
     sectionId: "cb-round-1",
     questionText: "What is the largest 2-digit integer that is the product of three distinct prime numbers?",
     correctAnswer: "78",
@@ -78,6 +84,7 @@ export const collegeBowlQuestions: Question[] = [
   },
   {
     id: "cb1-7",
+    gradeLevel: "7-8",
     sectionId: "cb-round-1",
     questionText: "An infinite series begins with the terms 1/3, 2/4, 3/5, and so on. The ninth term in the series is A/B. What is A + B?",
     correctAnswer: "20",
@@ -91,6 +98,7 @@ export const collegeBowlQuestions: Question[] = [
   },
   {
     id: "cb1-8",
+    gradeLevel: "7-8",
     sectionId: "cb-round-1",
     questionText: "What is the mean of the two-digit positive multiples of 22?",
     correctAnswer: "55",
@@ -103,6 +111,7 @@ export const collegeBowlQuestions: Question[] = [
   },
   {
     id: "cb1-9",
+    gradeLevel: "7-8",
     sectionId: "cb-round-1",
     questionText: "Let A be a single-digit positive integer, B be a two-digit positive integer, and C be a three-digit positive integer. What is the largest possible positive difference between C and the sum of A and B?",
     correctAnswer: "988",
@@ -116,6 +125,7 @@ export const collegeBowlQuestions: Question[] = [
   },
   {
     id: "cb1-10",
+    gradeLevel: "7-8",
     sectionId: "cb-round-1",
     questionText: "Let A = 1 + 20 + 300 + 4000 + 50000. What is A divided by 3?",
     correctAnswer: "18107",
@@ -130,6 +140,7 @@ export const collegeBowlQuestions: Question[] = [
   // ── Round 2 ──
   {
     id: "cb2-1",
+    gradeLevel: "7-8",
     sectionId: "cb-round-2",
     questionText: "What is the greatest positive difference between any two prime numbers less than 30?",
     correctAnswer: "27",
@@ -142,6 +153,7 @@ export const collegeBowlQuestions: Question[] = [
   },
   {
     id: "cb2-2",
+    gradeLevel: "7-8",
     sectionId: "cb-round-2",
     questionText: "How many square inches are in 2.5 square feet?",
     correctAnswer: "360",
@@ -154,6 +166,7 @@ export const collegeBowlQuestions: Question[] = [
   },
   {
     id: "cb2-3",
+    gradeLevel: "7-8",
     sectionId: "cb-round-2",
     questionText: "As a reduced common fraction, 1/3 + 3/5 = A/B. What is 2A?",
     correctAnswer: "28",
@@ -167,6 +180,7 @@ export const collegeBowlQuestions: Question[] = [
   },
   {
     id: "cb2-4",
+    gradeLevel: "7-8",
     sectionId: "cb-round-2",
     questionText: "The first three terms of a sequence are 12, 20, and 8, where starting with the third term, each successive term is the positive difference between the previous two terms. What is the 100th term in this sequence?",
     correctAnswer: "4",
@@ -180,6 +194,7 @@ export const collegeBowlQuestions: Question[] = [
   },
   {
     id: "cb2-5",
+    gradeLevel: "7-8",
     sectionId: "cb-round-2",
     questionText: "The expression 6x² + x − 40 can be factored into (2x − A)(3x + B). What is B?",
     correctAnswer: "8",
@@ -192,6 +207,7 @@ export const collegeBowlQuestions: Question[] = [
   },
   {
     id: "cb2-6",
+    gradeLevel: "7-8",
     sectionId: "cb-round-2",
     questionText: "How many positive integers less than 250 are multiples of both 4 and 10, but not multiples of 6?",
     correctAnswer: "8",
@@ -206,6 +222,7 @@ export const collegeBowlQuestions: Question[] = [
   },
   {
     id: "cb2-7",
+    gradeLevel: "7-8",
     sectionId: "cb-round-2",
     questionText: "Bert can decorate 3 cakes in an hour. Ernie decorates cakes at a rate that is 1.5 times Bert's rate. How many minutes would it take the two of them working together to decorate 3 cakes?",
     correctAnswer: "24",
@@ -219,6 +236,7 @@ export const collegeBowlQuestions: Question[] = [
   },
   {
     id: "cb2-8",
+    gradeLevel: "7-8",
     sectionId: "cb-round-2",
     questionText: "As a reduced common fraction, the probability of drawing two cards one at a time with replacement from a standard deck that are both aces is A/B. What is A + B?",
     correctAnswer: "170",
@@ -232,6 +250,7 @@ export const collegeBowlQuestions: Question[] = [
   },
   {
     id: "cb2-9",
+    gradeLevel: "7-8",
     sectionId: "cb-round-2",
     questionText: "35 is 7% of what number?",
     correctAnswer: "500",
@@ -244,6 +263,7 @@ export const collegeBowlQuestions: Question[] = [
   },
   {
     id: "cb2-10",
+    gradeLevel: "7-8",
     sectionId: "cb-round-2",
     questionText: "The measures of three of the angles in a convex quadrilateral are 61°, 92°, and 108°. How many degrees are in the measure of the fourth angle?",
     correctAnswer: "99",
@@ -257,6 +277,7 @@ export const collegeBowlQuestions: Question[] = [
   // ── Round 3 ──
   {
     id: "cb3-1",
+    gradeLevel: "7-8",
     sectionId: "cb-round-3",
     questionText: "An ultimate frisbee team has 12 girls and 9 boys. As a reduced common fraction, the ratio of girls to total players is A/B. What is A + B?",
     correctAnswer: "11",
@@ -269,6 +290,7 @@ export const collegeBowlQuestions: Question[] = [
   },
   {
     id: "cb3-2",
+    gradeLevel: "7-8",
     sectionId: "cb-round-3",
     questionText: "As a reduced common fraction, the value of x in the equation 5x/8 = 7/9 is A/B. What is A + B?",
     correctAnswer: "101",
@@ -281,6 +303,7 @@ export const collegeBowlQuestions: Question[] = [
   },
   {
     id: "cb3-3",
+    gradeLevel: "7-8",
     sectionId: "cb-round-3",
     questionText: "What is 30 × 53 ÷ 3?",
     correctAnswer: "530",
@@ -293,6 +316,7 @@ export const collegeBowlQuestions: Question[] = [
   },
   {
     id: "cb3-4",
+    gradeLevel: "7-8",
     sectionId: "cb-round-3",
     questionText: "In a sequence the fourth term is the mean of the first three terms, and each successive term is the mean of the previous three terms. If the first three terms are −15, 1, and 32, what is the sixth term?",
     correctAnswer: "17",
@@ -305,6 +329,7 @@ export const collegeBowlQuestions: Question[] = [
   },
   {
     id: "cb3-5",
+    gradeLevel: "7-8",
     sectionId: "cb-round-3",
     questionText: "The probability that the Mustangs will win any given game is 60%. As a percentage, what is the probability that they will win exactly one of their next two games?",
     correctAnswer: "48",
@@ -317,6 +342,7 @@ export const collegeBowlQuestions: Question[] = [
   },
   {
     id: "cb3-6",
+    gradeLevel: "7-8",
     sectionId: "cb-round-3",
     questionText: "How many integers are greater than 7.9 and less than 31.1?",
     correctAnswer: "23",
@@ -329,6 +355,7 @@ export const collegeBowlQuestions: Question[] = [
   },
   {
     id: "cb3-7",
+    gradeLevel: "7-8",
     sectionId: "cb-round-3",
     questionText: "A data set contains 7 distinct positive integers, the median is 13, and the mean is 14. What is the largest possible number in the set?",
     correctAnswer: "50",
@@ -342,6 +369,7 @@ export const collegeBowlQuestions: Question[] = [
   },
   {
     id: "cb3-8",
+    gradeLevel: "7-8",
     sectionId: "cb-round-3",
     questionText: "In degrees, what is the measure of the complement of the supplement of a 116° angle?",
     correctAnswer: "26",
@@ -355,6 +383,7 @@ export const collegeBowlQuestions: Question[] = [
   },
   {
     id: "cb3-9",
+    gradeLevel: "7-8",
     sectionId: "cb-round-3",
     questionText: "Abe is 6 years older than Ben, who is currently 10 years old. How old in years was Abe when he was twice as old as Ben?",
     correctAnswer: "12",
@@ -368,6 +397,7 @@ export const collegeBowlQuestions: Question[] = [
   },
   {
     id: "cb3-10",
+    gradeLevel: "7-8",
     sectionId: "cb-round-3",
     questionText: "If 3 carpenters can build 27 cabinets in 6 days, how many cabinets can 5 carpenters build in 10 days?",
     correctAnswer: "75",
@@ -382,6 +412,7 @@ export const collegeBowlQuestions: Question[] = [
   // ── Round 4 ──
   {
     id: "cb4-1",
+    gradeLevel: "7-8",
     sectionId: "cb-round-4",
     questionText: "What is 83 × 77?",
     correctAnswer: "6391",
@@ -394,6 +425,7 @@ export const collegeBowlQuestions: Question[] = [
   },
   {
     id: "cb4-2",
+    gradeLevel: "7-8",
     sectionId: "cb-round-4",
     questionText: "What is the sum of the first 6 terms of the geometric sequence whose first three terms are 1, 3, and 9?",
     correctAnswer: "364",
@@ -407,6 +439,7 @@ export const collegeBowlQuestions: Question[] = [
   },
   {
     id: "cb4-3",
+    gradeLevel: "7-8",
     sectionId: "cb-round-4",
     questionText: "Each of the smallest 6 positive prime numbers is doubled to make a set of 6 even integers. What is the median of the set?",
     correctAnswer: "12",
@@ -420,6 +453,7 @@ export const collegeBowlQuestions: Question[] = [
   },
   {
     id: "cb4-4",
+    gradeLevel: "7-8",
     sectionId: "cb-round-4",
     questionText: "Jenna took 63 minutes to read 57 pages of her book which is 266 pages long. At this rate, how many minutes will it take her to read the rest of the book?",
     correctAnswer: "231",
@@ -433,6 +467,7 @@ export const collegeBowlQuestions: Question[] = [
   },
   {
     id: "cb4-5",
+    gradeLevel: "7-8",
     sectionId: "cb-round-4",
     questionText: "What is the smallest 2-digit composite number that has exactly two distinct composite numbers as factors?",
     correctAnswer: "27",
@@ -446,6 +481,7 @@ export const collegeBowlQuestions: Question[] = [
   },
   {
     id: "cb4-6",
+    gradeLevel: "7-8",
     sectionId: "cb-round-4",
     questionText: "Let A be 150% of B. Let C be 250% of D. Let A = C. What percent of B is D?",
     correctAnswer: "60",
@@ -459,6 +495,7 @@ export const collegeBowlQuestions: Question[] = [
   },
   {
     id: "cb4-7",
+    gradeLevel: "7-8",
     sectionId: "cb-round-4",
     questionText: "A cone and a cylinder have the same volume. The cylinder has a radius that is half the radius of the cone. As a reduced common fraction, the ratio of the height of the cylinder to the height of the cone is A/B. What is A + B?",
     correctAnswer: "7",
@@ -472,6 +509,7 @@ export const collegeBowlQuestions: Question[] = [
   },
   {
     id: "cb4-8",
+    gradeLevel: "7-8",
     sectionId: "cb-round-4",
     questionText: "A fathom is equivalent to 6 feet. The average depth of Iceland's Blue Lagoon is 2/3 of a fathom. What is the average depth of Blue Lagoon in inches?",
     correctAnswer: "48",
@@ -484,6 +522,7 @@ export const collegeBowlQuestions: Question[] = [
   },
   {
     id: "cb4-9",
+    gradeLevel: "7-8",
     sectionId: "cb-round-4",
     questionText: "Solve the following equation for x: 5x/2 = 165/6",
     correctAnswer: "11",
@@ -496,6 +535,7 @@ export const collegeBowlQuestions: Question[] = [
   },
   {
     id: "cb4-10",
+    gradeLevel: "7-8",
     sectionId: "cb-round-4",
     questionText: "As a reduced common fraction, the ratio of the number of positive single-digit even integers to the number of positive single-digit odd integers is A/B. What is A + B?",
     correctAnswer: "9",
@@ -510,6 +550,7 @@ export const collegeBowlQuestions: Question[] = [
   // ── Round 5 ──
   {
     id: "cb5-1",
+    gradeLevel: "7-8",
     sectionId: "cb-round-5",
     questionText: "Shira has 6 dimes, 7 pennies, 2 nickels, and 5 quarters in her pocket. If she randomly selects one coin, what is the probability in percent that it is a dime?",
     correctAnswer: "30",
@@ -523,6 +564,7 @@ export const collegeBowlQuestions: Question[] = [
   },
   {
     id: "cb5-2",
+    gradeLevel: "7-8",
     sectionId: "cb-round-5",
     questionText: "In centimeters, what is the diameter of a circle whose area is 169π cm²?",
     correctAnswer: "26",
@@ -536,6 +578,7 @@ export const collegeBowlQuestions: Question[] = [
   },
   {
     id: "cb5-3",
+    gradeLevel: "7-8",
     sectionId: "cb-round-5",
     questionText: "Serena's scores on her last three rounds of golf were 82, 85, and 77. What score does she need on her next round to lower her average to exactly 80?",
     correctAnswer: "76",
@@ -548,6 +591,7 @@ export const collegeBowlQuestions: Question[] = [
   },
   {
     id: "cb5-4",
+    gradeLevel: "7-8",
     sectionId: "cb-round-5",
     questionText: "|A − B| = 8 and |B − C| = 9. Let D = the greatest possible |A − C| and E = the smallest possible |A − C|. What is D − E?",
     correctAnswer: "16",
@@ -561,6 +605,7 @@ export const collegeBowlQuestions: Question[] = [
   },
   {
     id: "cb5-5",
+    gradeLevel: "7-8",
     sectionId: "cb-round-5",
     questionText: "What is the smallest possible sum of two positive integers whose greatest common factor is 13 and whose least common multiple is 130?",
     correctAnswer: "91",
@@ -574,6 +619,7 @@ export const collegeBowlQuestions: Question[] = [
   },
   {
     id: "cb5-6",
+    gradeLevel: "7-8",
     sectionId: "cb-round-5",
     questionText: "Angela and Megan begin at the same place and time to run around a circular 400-meter track. Angela's average rate is 240 m/min and Megan's rate is 20% faster. After how many seconds will Megan pass Angela for the first time?",
     correctAnswer: "500",
@@ -587,6 +633,7 @@ export const collegeBowlQuestions: Question[] = [
   },
   {
     id: "cb5-7",
+    gradeLevel: "7-8",
     sectionId: "cb-round-5",
     questionText: "Every page of a 121-page book is numbered. How many times does the digit 6 appear in the page numbering?",
     correctAnswer: "22",
@@ -600,6 +647,7 @@ export const collegeBowlQuestions: Question[] = [
   },
   {
     id: "cb5-8",
+    gradeLevel: "7-8",
     sectionId: "cb-round-5",
     questionText: "What is 3/8 divided by 1/16?",
     correctAnswer: "6",
@@ -612,6 +660,7 @@ export const collegeBowlQuestions: Question[] = [
   },
   {
     id: "cb5-9",
+    gradeLevel: "7-8",
     sectionId: "cb-round-5",
     questionText: "1/4 of the Skittles in a bag of 60 are green, 1/6 are yellow, 3/10 are purple, and the rest are orange. How many Skittles are orange or purple?",
     correctAnswer: "35",
@@ -625,6 +674,7 @@ export const collegeBowlQuestions: Question[] = [
   },
   {
     id: "cb5-10",
+    gradeLevel: "7-8",
     sectionId: "cb-round-5",
     questionText: "Solve for x: 7x − 23 = −2x + 139",
     correctAnswer: "18",
@@ -638,6 +688,7 @@ export const collegeBowlQuestions: Question[] = [
   // ── Round 6 ──
   {
     id: "cb6-1",
+    gradeLevel: "7-8",
     sectionId: "cb-round-6",
     questionText: "How many millimeters are in 2 and 4/5 of a meter?",
     correctAnswer: "2800",
@@ -650,6 +701,7 @@ export const collegeBowlQuestions: Question[] = [
   },
   {
     id: "cb6-2",
+    gradeLevel: "7-8",
     sectionId: "cb-round-6",
     questionText: "If A = 4B and 3A − 5B = 56, what is A?",
     correctAnswer: "32",
@@ -663,6 +715,7 @@ export const collegeBowlQuestions: Question[] = [
   },
   {
     id: "cb6-3",
+    gradeLevel: "7-8",
     sectionId: "cb-round-6",
     questionText: "Rae can paint 10 boards in 16 minutes. At this rate, how many boards can she paint in 40 minutes?",
     correctAnswer: "25",
@@ -675,6 +728,7 @@ export const collegeBowlQuestions: Question[] = [
   },
   {
     id: "cb6-4",
+    gradeLevel: "7-8",
     sectionId: "cb-round-6",
     questionText: "A jar contains 20 marbles that are all either green or blue. After 1/4 of the green marbles are removed, there are 17 marbles left. As a percentage, what is the probability of randomly selecting a blue marble from the original contents of the jar?",
     correctAnswer: "40",
@@ -688,6 +742,7 @@ export const collegeBowlQuestions: Question[] = [
   },
   {
     id: "cb6-5",
+    gradeLevel: "7-8",
     sectionId: "cb-round-6",
     questionText: "How many positive 2-digit integers less than 40 are there, such that each digit is a different positive factor of the integer?",
     correctAnswer: "4",
@@ -701,6 +756,7 @@ export const collegeBowlQuestions: Question[] = [
   },
   {
     id: "cb6-6",
+    gradeLevel: "7-8",
     sectionId: "cb-round-6",
     questionText: "Let A, B, C, and D each be replaced randomly by a different member of the set {6, 9, 12, 15}. What is the largest possible value of A × B − C × D?",
     correctAnswer: "126",
@@ -713,6 +769,7 @@ export const collegeBowlQuestions: Question[] = [
   },
   {
     id: "cb6-7",
+    gradeLevel: "7-8",
     sectionId: "cb-round-6",
     questionText: "As a reduced common fraction, A/B = 3/7, where A ≠ 3 and B ≠ 7. When 4 is added to A, the new ratio is 4/7. What is B?",
     correctAnswer: "28",
@@ -726,6 +783,7 @@ export const collegeBowlQuestions: Question[] = [
   },
   {
     id: "cb6-8",
+    gradeLevel: "7-8",
     sectionId: "cb-round-6",
     questionText: "What is the positive difference between the largest 2-digit prime number and the smallest 1-digit prime number?",
     correctAnswer: "95",
@@ -739,6 +797,7 @@ export const collegeBowlQuestions: Question[] = [
   },
   {
     id: "cb6-9",
+    gradeLevel: "7-8",
     sectionId: "cb-round-6",
     questionText: "What is the 10th term in the arithmetic sequence whose first term is 10 and whose fourth term is 19?",
     correctAnswer: "37",
@@ -752,6 +811,7 @@ export const collegeBowlQuestions: Question[] = [
   },
   {
     id: "cb6-10",
+    gradeLevel: "7-8",
     sectionId: "cb-round-6",
     questionText: "What is the median of the following set of numbers: 19, 109, 9, 29, 79, 89?",
     correctAnswer: "54",

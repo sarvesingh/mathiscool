@@ -3,6 +3,7 @@ import { Question } from "../types";
 export const individualQuestions: Question[] = [
   {
     id: "ind-1",
+    gradeLevel: "7-8",
     sectionId: "individual",
     questionText: "How many nickels make 85 cents?",
     correctAnswer: "17",
@@ -15,6 +16,7 @@ export const individualQuestions: Question[] = [
   },
   {
     id: "ind-2",
+    gradeLevel: "7-8",
     sectionId: "individual",
     questionText: "What is the largest 2-digit multiple of 12?",
     correctAnswer: "96",
@@ -27,6 +29,7 @@ export const individualQuestions: Question[] = [
   },
   {
     id: "ind-3",
+    gradeLevel: "7-8",
     sectionId: "individual",
     questionText: "The mean of three numbers is 30. If two of the numbers are 11 and 27, what is the third number?",
     correctAnswer: "52",
@@ -40,6 +43,7 @@ export const individualQuestions: Question[] = [
   },
   {
     id: "ind-4",
+    gradeLevel: "7-8",
     sectionId: "individual",
     questionText: "Guillermo has one white hat, two blue hats, and three brown hats and he randomly selects one to wear on a given day. As a reduced common fraction, the probability that he takes a blue hat is A/B. What is A + B?",
     correctAnswer: "4",
@@ -53,6 +57,7 @@ export const individualQuestions: Question[] = [
   },
   {
     id: "ind-5",
+    gradeLevel: "7-8",
     sectionId: "individual",
     questionText: "Evaluate: 4444 − 333 + 22 − 1",
     correctAnswer: "4132",
@@ -65,6 +70,7 @@ export const individualQuestions: Question[] = [
   },
   {
     id: "ind-6",
+    gradeLevel: "7-8",
     sectionId: "individual",
     questionText: "How many square inches are in the area of a rectangle with a length of 13 inches and a width of 16 inches?",
     correctAnswer: "208",
@@ -77,6 +83,7 @@ export const individualQuestions: Question[] = [
   },
   {
     id: "ind-7",
+    gradeLevel: "7-8",
     sectionId: "individual",
     questionText: "How many meters are in 5.1 kilometers?",
     correctAnswer: "5100",
@@ -89,6 +96,7 @@ export const individualQuestions: Question[] = [
   },
   {
     id: "ind-8",
+    gradeLevel: "7-8",
     sectionId: "individual",
     questionText: "A dish has 4 green marbles, 7 clear marbles, and 8 orange marbles. If marbles are randomly taken from the dish, what is the minimum number needed to be taken that would guarantee at least one of each color?",
     correctAnswer: "16",
@@ -102,6 +110,7 @@ export const individualQuestions: Question[] = [
   },
   {
     id: "ind-9",
+    gradeLevel: "7-8",
     sectionId: "individual",
     questionText: "Solve the equation for x: 6x − 21 = 69",
     correctAnswer: "15",
@@ -114,6 +123,7 @@ export const individualQuestions: Question[] = [
   },
   {
     id: "ind-10",
+    gradeLevel: "7-8",
     sectionId: "individual",
     questionText: "Lincoln can wash 12 plates in 3 minutes. In minutes, how long does it take him to wash 56 plates?",
     correctAnswer: "14",
@@ -127,6 +137,7 @@ export const individualQuestions: Question[] = [
   },
   {
     id: "ind-11",
+    gradeLevel: "7-8",
     sectionId: "individual",
     questionText: "What percent of 25 is 10?",
     correctAnswer: "40",
@@ -139,6 +150,7 @@ export const individualQuestions: Question[] = [
   },
   {
     id: "ind-12",
+    gradeLevel: "7-8",
     sectionId: "individual",
     questionText: "What is the 7th term in the arithmetic sequence whose first three terms are 13, 42, and 71?",
     correctAnswer: "187",
@@ -152,6 +164,7 @@ export const individualQuestions: Question[] = [
   },
   {
     id: "ind-13",
+    gradeLevel: "7-8",
     sectionId: "individual",
     questionText: "A number is randomly selected from the integers 1 through 20. As a percent, what is the probability that the selected number is larger than 16?",
     correctAnswer: "20",
@@ -165,6 +178,7 @@ export const individualQuestions: Question[] = [
   },
   {
     id: "ind-14",
+    gradeLevel: "7-8",
     sectionId: "individual",
     questionText: "What is the largest prime factor of 104?",
     correctAnswer: "13",
@@ -178,6 +192,7 @@ export const individualQuestions: Question[] = [
   },
   {
     id: "ind-15",
+    gradeLevel: "7-8",
     sectionId: "individual",
     questionText: "What is the median of the following set of numbers? 22, 15, 31, 18, 23, 17, 20, 32",
     correctAnswer: "21",
@@ -191,6 +206,7 @@ export const individualQuestions: Question[] = [
   },
   {
     id: "ind-16",
+    gradeLevel: "7-8",
     sectionId: "individual",
     questionText: "What is the smallest integer solution to the inequality 72 < 3x + 8?",
     correctAnswer: "22",
@@ -204,6 +220,7 @@ export const individualQuestions: Question[] = [
   },
   {
     id: "ind-17",
+    gradeLevel: "7-8",
     sectionId: "individual",
     questionText: "The area of a circle with diameter 14 inches is Aπ in². What is A?",
     correctAnswer: "49",
@@ -217,6 +234,7 @@ export const individualQuestions: Question[] = [
   },
   {
     id: "ind-18",
+    gradeLevel: "7-8",
     sectionId: "individual",
     questionText: "How many ways are there to arrange the letters in the word CROW, if C must be the third letter?",
     correctAnswer: "6",
@@ -230,6 +248,7 @@ export const individualQuestions: Question[] = [
   },
   {
     id: "ind-19",
+    gradeLevel: "7-8",
     sectionId: "individual",
     questionText: "Let set A = {9, 18, 27, 36, 45, 54, 63, 72, 81, 90, 99}, set B = {5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95}, and set C = {15, 30, 45, 60, 75, 90}. As a reduced common fraction, the probability that a randomly chosen number from set A is also a member of both sets B and C is P/Q. What is P + Q?",
     correctAnswer: "13",
@@ -243,6 +262,7 @@ export const individualQuestions: Question[] = [
   },
   {
     id: "ind-20",
+    gradeLevel: "7-8",
     sectionId: "individual",
     questionText: "What is the sum of the distinct prime factors of the number 2025?",
     correctAnswer: "8",
@@ -256,6 +276,7 @@ export const individualQuestions: Question[] = [
   },
   {
     id: "ind-21",
+    gradeLevel: "7-8",
     sectionId: "individual",
     questionText: "The Fibonacci Sequence is 1, 1, 2, 3, 5, 8, … A different increasing sequence (the \"New Sequence\") has 17 as its first term. Each successive term is found by adding the corresponding Fibonacci term to the previous New Sequence term. What is the tenth term of the New Sequence?",
     correctAnswer: "105",
@@ -269,6 +290,7 @@ export const individualQuestions: Question[] = [
   },
   {
     id: "ind-22",
+    gradeLevel: "7-8",
     sectionId: "individual",
     questionText: "Leon takes 96 seconds to complete one lap on the track at school. Ayanna runs at a rate that is 4/3 times as fast as Leon. How many seconds does it take Ayanna to complete one lap on the same track?",
     correctAnswer: "72",
@@ -282,6 +304,7 @@ export const individualQuestions: Question[] = [
   },
   {
     id: "ind-23",
+    gradeLevel: "7-8",
     sectionId: "individual",
     questionText: "What is the largest possible number in a data set with 6 distinct positive integers and a mean of 19?",
     correctAnswer: "99",
@@ -296,6 +319,7 @@ export const individualQuestions: Question[] = [
   },
   {
     id: "ind-24",
+    gradeLevel: "7-8",
     sectionId: "individual",
     questionText: "The lengths of two parallel sides of square ABCD are multiplied by 1.7 and the other two parallel sides are multiplied by 2.2 to create rectangle EFGH. As a reduced common fraction, the ratio of the area of rectangle EFGH to the area of square ABCD is P/Q. What is P + Q?",
     correctAnswer: "237",
@@ -309,6 +333,7 @@ export const individualQuestions: Question[] = [
   },
   {
     id: "ind-25",
+    gradeLevel: "7-8",
     sectionId: "individual",
     questionText: "Nayeli has 1.25 times as many dimes as nickels and the value of her dimes and nickels is $5.60. How many nickels does she have?",
     correctAnswer: "32",
@@ -322,6 +347,7 @@ export const individualQuestions: Question[] = [
   },
   {
     id: "ind-26",
+    gradeLevel: "7-8",
     sectionId: "individual",
     questionText: "A bathtub takes 2 minutes to fill up when the drain is closed and 5 minutes to fill up when the drain is open. In seconds, how long does it take to empty a full tub?",
     correctAnswer: "200",
@@ -335,6 +361,7 @@ export const individualQuestions: Question[] = [
   },
   {
     id: "ind-27",
+    gradeLevel: "7-8",
     sectionId: "individual",
     questionText: "The base-10 number 279 = 139 in base b, where b > 0. What is the value of b?",
     correctAnswer: "15",
@@ -348,6 +375,7 @@ export const individualQuestions: Question[] = [
   },
   {
     id: "ind-28",
+    gradeLevel: "7-8",
     sectionId: "individual",
     questionText: "At a summer ping pong academy, 1/8 of the residents are left-handed and 7/8 are right-handed. Exactly 1/4 of the left-handed residents and 3/16 of the right-handed residents use a red paddle. What is the smallest possible number of residents at the academy?",
     correctAnswer: "128",
@@ -362,6 +390,7 @@ export const individualQuestions: Question[] = [
   },
   {
     id: "ind-29",
+    gradeLevel: "7-8",
     sectionId: "individual",
     questionText: "What is the mean of all integers that are 4 more than 117 times their reciprocal?",
     correctAnswer: "2",
@@ -376,6 +405,7 @@ export const individualQuestions: Question[] = [
   },
   {
     id: "ind-30",
+    gradeLevel: "7-8",
     sectionId: "individual",
     questionText: "A data set consists of 6 positive integers, 5 of which are distinct from each other and one that is the same as one of the 5 distinct integers. The mean and the mode of the data set are both 10. What is the positive difference between the greatest possible range and the smallest possible range?",
     correctAnswer: "29",
@@ -390,6 +420,7 @@ export const individualQuestions: Question[] = [
   },
   {
     id: "ind-31",
+    gradeLevel: "7-8",
     sectionId: "individual",
     questionText: "Josue and Felicity take turns rolling a fair 12-sided die with faces numbered 1 through 12. The first player to roll an odd prime number wins. If Felicity goes first, as a reduced common fraction, the probability that she wins is A/B. What is A + B?",
     correctAnswer: "8",
@@ -404,6 +435,7 @@ export const individualQuestions: Question[] = [
   },
   {
     id: "ind-32",
+    gradeLevel: "7-8",
     sectionId: "individual",
     questionText: "How many 5-digit positive integers can be created using the digits 2, 3, 4, 5, 6, 7, and 8, such that all 5 digits are different and no two even digits may be next to each other?",
     correctAnswer: "576",
@@ -419,6 +451,7 @@ export const individualQuestions: Question[] = [
   },
   {
     id: "ind-33",
+    gradeLevel: "7-8",
     sectionId: "individual",
     questionText: "Two real numbers from 0 to 9, inclusive, are chosen at random. As a reduced common fraction, the probability that the positive difference between the two numbers is greater than 2 is A/B. What is A + B?",
     correctAnswer: "130",

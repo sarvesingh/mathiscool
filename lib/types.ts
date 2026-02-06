@@ -12,9 +12,18 @@ export interface Choice {
   value: string;
 }
 
+export type GradeLevel = "5" | "6" | "7-8" | "9-10";
+
+export interface GradeOption {
+  value: GradeLevel;
+  label: string;
+  description: string;
+}
+
 export interface Question {
   id: string;
   sectionId: string;
+  gradeLevel: GradeLevel;
   questionText: string;
   correctAnswer: string;
   answerType: AnswerType;

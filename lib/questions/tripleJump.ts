@@ -3,6 +3,7 @@ import { Question } from "../types";
 export const tripleJumpQuestions: Question[] = [
   {
     id: "tj-1",
+    gradeLevel: "7-8",
     sectionId: "triple-jump",
     questionText: "Evaluate the following expression when a = 2 and b = 3: 9a²b² + 7ab³",
     correctAnswer: "702",
@@ -16,6 +17,7 @@ export const tripleJumpQuestions: Question[] = [
   },
   {
     id: "tj-2",
+    gradeLevel: "7-8",
     sectionId: "triple-jump",
     questionText: "One gallon is equivalent to about 3.78541 liters. To the nearest integer number of milliliters, how many milliliters are in one gallon?",
     correctAnswer: "3785",
@@ -28,6 +30,7 @@ export const tripleJumpQuestions: Question[] = [
   },
   {
     id: "tj-3",
+    gradeLevel: "7-8",
     sectionId: "triple-jump",
     questionText: "Horace takes 5 minutes to walk one-fifth of a mile home from school. Horace's average rate of walking home from school is A.B miles per hour. What is A + B?",
     correctAnswer: "6",
@@ -41,6 +44,7 @@ export const tripleJumpQuestions: Question[] = [
   },
   {
     id: "tj-4",
+    gradeLevel: "7-8",
     sectionId: "triple-jump",
     questionText: "The first three terms of a geometric sequence are 1458, 486, and 162. What is the 7th term in the sequence?",
     correctAnswer: "2",
@@ -54,6 +58,7 @@ export const tripleJumpQuestions: Question[] = [
   },
   {
     id: "tj-5",
+    gradeLevel: "7-8",
     sectionId: "triple-jump",
     questionText: "A pair of standard dice are rolled. As a reduced common fraction, the probability that the sum of the two numbers showing is greater than 4 and less than 9 is A/B. What is A + B?",
     correctAnswer: "14",
@@ -67,6 +72,7 @@ export const tripleJumpQuestions: Question[] = [
   },
   {
     id: "tj-6",
+    gradeLevel: "7-8",
     sectionId: "triple-jump",
     questionText: "A regular hexagon is inscribed in a circle. Given that the area of the hexagon is 294√3 cm², the circumference of the circle can be written as Aπ cm. What is A?",
     correctAnswer: "28",
@@ -81,6 +87,7 @@ export const tripleJumpQuestions: Question[] = [
   },
   {
     id: "tj-7",
+    gradeLevel: "7-8",
     sectionId: "triple-jump",
     questionText: "Juana can build a large shed in 5 days less than it takes her brother Carlos. If they built it together it would take them 6 days. How many days would it take Carlos to build the shed by himself?",
     correctAnswer: "15",
@@ -95,6 +102,7 @@ export const tripleJumpQuestions: Question[] = [
   },
   {
     id: "tj-8",
+    gradeLevel: "7-8",
     sectionId: "triple-jump",
     questionText: "What is the only 7-digit base-7 number in which the first digit tells how many 0s, the second digit tells how many 1s, the third digit tells how many 2s, the fourth digit tells how many 3s, the fifth digit tells how many 4s, the sixth digit tells how many 5s, and the seventh digit tells how many 6s are in the number?",
     correctAnswer: "3211000",

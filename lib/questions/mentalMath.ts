@@ -3,6 +3,7 @@ import { Question } from "../types";
 export const mentalMathQuestions: Question[] = [
   {
     id: "mm-1",
+    gradeLevel: "7-8",
     sectionId: "mental-math",
     questionText: "What is the mean of the set of integers from eleven to fifteen inclusive?",
     correctAnswer: "13",
@@ -16,6 +17,7 @@ export const mentalMathQuestions: Question[] = [
   },
   {
     id: "mm-2",
+    gradeLevel: "7-8",
     sectionId: "mental-math",
     questionText: "Phoebe and Monica are going to evenly split the cost of a $3,500 car. How many dollars will Phoebe pay for her share of the car?",
     correctAnswer: "1750",
@@ -28,6 +30,7 @@ export const mentalMathQuestions: Question[] = [
   },
   {
     id: "mm-3",
+    gradeLevel: "7-8",
     sectionId: "mental-math",
     questionText: "What is the maximum number of non-overlapping circles of radius 1 cm that can fit inside a 2 cm × 15 cm rectangle?",
     correctAnswer: "7",
@@ -41,6 +44,7 @@ export const mentalMathQuestions: Question[] = [
   },
   {
     id: "mm-4",
+    gradeLevel: "7-8",
     sectionId: "mental-math",
     questionText: "How many prime numbers are between 24 and 32?",
     correctAnswer: "2",
@@ -54,6 +58,7 @@ export const mentalMathQuestions: Question[] = [
   },
   {
     id: "mm-5",
+    gradeLevel: "7-8",
     sectionId: "mental-math",
     questionText: "What is three-fourths of 12 plus four-thirds of 12?",
     correctAnswer: "25",
@@ -67,6 +72,7 @@ export const mentalMathQuestions: Question[] = [
   },
   {
     id: "mm-6",
+    gradeLevel: "7-8",
     sectionId: "mental-math",
     questionText: "Hamta left home for school at 7:30 AM and returned home on the same day at 3:45 PM. How many minutes was Hamta away from home?",
     correctAnswer: "495",
@@ -80,6 +86,7 @@ export const mentalMathQuestions: Question[] = [
   },
   {
     id: "mm-7",
+    gradeLevel: "7-8",
     sectionId: "mental-math",
     questionText: "The first three terms of a geometric sequence are 112, 56, and 28. Let term number N be the first term in the sequence that is less than 1. What is N?",
     correctAnswer: "8",
@@ -93,6 +100,7 @@ export const mentalMathQuestions: Question[] = [
   },
   {
     id: "mm-8",
+    gradeLevel: "7-8",
     sectionId: "mental-math",
     questionText: "Min has four standard dice (red, yellow, green, blue). If she rolls them all together, in how many ways can three of the dice show the same number while the fourth die shows something different?",
     correctAnswer: "120",
