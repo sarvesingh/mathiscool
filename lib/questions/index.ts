@@ -10,6 +10,10 @@ import { mathcountsSchoolQuestions } from "./mathcountsSchool";
 import { mathcountsChapterQuestions } from "./mathcountsChapter";
 import { mathcountsStateQuestions } from "./mathcountsState";
 import { grade910Questions } from "./grade910";
+import { grade910MCQuestions } from "./grade910MC";
+import { grade910TeamQuestions } from "./grade910Team";
+import { grade910PressureQuestions } from "./grade910Pressure";
+import { grade910CBQuestions } from "./grade910CB";
 import { Question } from "../types";
 
 export const questions: Question[] = [
@@ -25,4 +29,8 @@ export const questions: Question[] = [
   ...mathcountsChapterQuestions,
   ...mathcountsStateQuestions,
   ...grade910Questions,
+  ...grade910MCQuestions,
+  ...grade910TeamQuestions,
+  ...grade910PressureQuestions,
+  ...grade910CBQuestions,
 ];
