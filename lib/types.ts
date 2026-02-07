@@ -2,6 +2,8 @@ export type Difficulty = "easy" | "medium" | "hard";
 
 export type AnswerType = "integer" | "decimal" | "fraction" | "text" | "multiple-choice";
 
+export type Competition = "math-is-cool" | "mathcounts";
+
 export interface ExplanationStep {
   label: string;
   content: string;
@@ -18,6 +20,7 @@ export interface GradeOption {
   value: GradeLevel;
   label: string;
   description: string;
+  competition: Competition;
 }
 
 export interface Question {
@@ -47,4 +50,5 @@ export interface Section {
   name: string;
   description: string;
   order: number;
+  competition: Competition;
 }

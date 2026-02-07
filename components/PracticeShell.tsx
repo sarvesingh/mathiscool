@@ -5,7 +5,7 @@ import Link from "next/link";
 import { questions } from "@/lib/questions";
 import { sections } from "@/lib/sections";
 import { checkAnswer } from "@/lib/answerChecker";
-import { QuestionProgress, Question, Section, GradeLevel } from "@/lib/types";
+import { QuestionProgress, Question, Section, GradeLevel, Competition } from "@/lib/types";
 import { grades } from "@/lib/grades";
 import QuestionCard from "./QuestionCard";
 import ProgressBar from "./ProgressBar";
@@ -35,10 +35,12 @@ function shuffleArray<T>(arr: T[]): T[] {
 interface PracticeShellProps {
   grade: GradeLevel;
   mode: "full" | "random";
+  competition: Competition;
 }
 
-export default function PracticeShell({ grade, mode }: PracticeShellProps) {
-  const gradeLabel = grades.find((g) => g.value === grade)?.label ?? grade;
+export default function PracticeShell({ grade, mode, competition }: PracticeShellProps) {
+  const gradeLabel = grades.find((g) => g.value === grade && g.competition === competition)?.label ?? grade;
+  const competitionName = competition === "mathcounts" ? "MATHCOUNTS" : "Math Is Cool";
 
   const gradeQuestions = useMemo(() => {
     const filtered = questions.filter((q) => q.gradeLevel === grade);
@@ -52,19 +54,20 @@ export default function PracticeShell({ grade, mode }: PracticeShellProps) {
     if (mode === "random") {
       return [
         {
-          section: { id: "random-quiz", name: "Random Quiz", description: `20 random questions from ${gradeLabel}`, order: 0 },
+          section: { id: "random-quiz", name: "Random Quiz", description: `20 random questions from ${gradeLabel}`, order: 0, competition },
           questions: gradeQuestions,
         },
       ];
     }
     return sections
+      .filter((s) => s.competition === competition)
       .sort((a, b) => a.order - b.order)
       .map((s) => ({
         section: s,
         questions: gradeQuestions.filter((q) => q.sectionId === s.id),
       }))
       .filter((sw) => sw.questions.length > 0);
-  }, [gradeQuestions, mode, gradeLabel]);
+  }, [gradeQuestions, mode, gradeLabel, competition]);
 
   const [sectionIndex, setSectionIndex] = useState(0);
   const [questionIndex, setQuestionIndex] = useState(0);
@@ -83,7 +86,7 @@ export default function PracticeShell({ grade, mode }: PracticeShellProps) {
   if (!currentSW || sectionQuestions.length === 0 || !question) {
     return (
       <div className="mx-auto max-w-2xl space-y-6 px-4 py-8 text-center">
-        <h1 className="text-2xl font-bold">Math is Cool — {gradeLabel}</h1>
+        <h1 className="text-2xl font-bold">{competitionName} — {gradeLabel}</h1>
         <p className="text-muted">No questions available for this grade level yet. Check back soon!</p>
         <Link href="/" className="inline-block rounded-lg bg-primary px-6 py-2 text-sm font-semibold text-white transition-colors hover:bg-primary-hover">
           Back to Home
@@ -101,9 +104,13 @@ export default function PracticeShell({ grade, mode }: PracticeShellProps) {
   const totalAnswered = gradeQuestions.filter(
     (q) => progress[q.id]?.isCorrect !== null,
   ).length;
-  const totalCorrect = gradeQuestions.filter(
-    (q) => progress[q.id]?.isCorrect === true,
-  ).length;
+  const totalScore = gradeQuestions.reduce((sum, q) => {
+    const p = progress[q.id];
+    if (p?.isCorrect === true) {
+      return sum + (p.attempts === 1 ? 1 : 0.5);
+    }
+    return sum;
+  }, 0);
 
   const updateProgress = (id: string, patch: Partial<QuestionProgress>) => {
     setProgress((prev) => ({ ...prev, [id]: { ...prev[id], ...patch } }));
@@ -198,15 +205,15 @@ export default function PracticeShell({ grade, mode }: PracticeShellProps) {
     <div className="mx-auto max-w-2xl space-y-6 px-4 py-8">
       <div className="flex items-center justify-between">
         <div>
-          <Link href="/" className="text-sm text-muted hover:text-primary transition-colors">&larr; All Grades</Link>
+          <Link href="/" className="text-sm text-muted hover:text-primary transition-colors">&larr; Home</Link>
           <h1 className="text-2xl font-bold">
-            Math is Cool — {gradeLabel}
+            {competitionName} — {gradeLabel}
             {mode === "random" && <span className="ml-2 text-base font-normal text-muted">(Random Quiz)</span>}
           </h1>
         </div>
         {totalAnswered > 0 && (
           <div className="text-right text-sm text-muted">
-            <span className="font-semibold text-success">{totalCorrect}</span>/{totalAnswered} correct
+            <span className="font-semibold text-success">{totalScore}</span>/{totalAnswered} points
           </div>
         )}
       </div>
