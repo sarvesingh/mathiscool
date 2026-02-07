@@ -67,4 +67,29 @@ export const sections: Section[] = [
     description: "10 buzzer-style questions.",
     order: 11,
   },
+  // MATHCOUNTS sections
+  {
+    id: "mc-sprint",
+    name: "MATHCOUNTS Sprint",
+    description: "30 questions, 40 minutes. No calculator allowed.",
+    order: 12,
+  },
+  {
+    id: "mc-target",
+    name: "MATHCOUNTS Target",
+    description: "8 questions in 4 pairs, 6 minutes per pair. Calculator allowed.",
+    order: 13,
+  },
+  {
+    id: "mc-team",
+    name: "MATHCOUNTS Team",
+    description: "10 questions, 20 minutes. Team of 4, calculator allowed.",
+    order: 14,
+  },
+  {
+    id: "mc-countdown",
+    name: "MATHCOUNTS Countdown",
+    description: "Fast-paced oral competition problems.",
+    order: 15,
+  },
 ];
