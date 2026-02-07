@@ -4,25 +4,53 @@ import ExplanationPanel from "./ExplanationPanel";
 interface QuestionCardProps {
   question: Question;
   progress: QuestionProgress;
+  maxAttempts: number;
   onAnswerChange: (answer: string) => void;
   onScratchChange: (scratch: string) => void;
   onCheckAnswer: () => void;
-  onSubmit: () => void;
   onExplain: () => void;
 }
 
 export default function QuestionCard({
   question,
   progress,
+  maxAttempts,
   onAnswerChange,
   onScratchChange,
   onCheckAnswer,
-  onSubmit,
   onExplain,
 }: QuestionCardProps) {
-  const { isCorrect } = progress;
+  const { isCorrect, attempts, locked } = progress;
   const hasBeenChecked = isCorrect !== null;
   const isMultipleChoice = question.answerType === "multiple-choice" && question.choices;
+  const attemptsRemaining = maxAttempts - attempts;
+  const canAttempt = !locked && progress.userAnswer.trim().length > 0;
+
+  // Feedback message
+  let feedbackMessage = "";
+  let feedbackClass = "";
+  if (hasBeenChecked) {
+    if (isCorrect) {
+      if (attempts === 1) {
+        feedbackMessage = "Correct! Full credit.";
+      } else {
+        feedbackMessage = `Correct on attempt ${attempts}! Half credit.`;
+      }
+      feedbackClass = "text-success";
+    } else if (locked) {
+      if (progress.explanationRevealed && attempts === 0) {
+        feedbackMessage = "Explanation viewed without attempting. No credit.";
+      } else if (attempts >= maxAttempts) {
+        feedbackMessage = `Incorrect after ${maxAttempts} attempts. No credit.`;
+      } else {
+        feedbackMessage = "Explanation viewed. No further attempts.";
+      }
+      feedbackClass = "text-error";
+    } else {
+      feedbackMessage = `Incorrect. ${attemptsRemaining} attempt${attemptsRemaining === 1 ? "" : "s"} remaining (half credit).`;
+      feedbackClass = "text-error";
+    }
+  }
 
   return (
     <div className="space-y-4">
@@ -69,7 +97,7 @@ export default function QuestionCard({
       </div>
 
       {isMultipleChoice ? (
-        <fieldset className="space-y-2">
+        <fieldset className="space-y-2" disabled={locked}>
           <legend className="mb-1 text-sm font-medium text-muted">
             Select your answer
           </legend>
@@ -84,7 +112,7 @@ export default function QuestionCard({
             return (
               <label
                 key={choice.value}
-                className={`flex cursor-pointer items-center gap-3 rounded-lg border p-3 transition-colors ${ringClass}`}
+                className={`flex items-center gap-3 rounded-lg border p-3 transition-colors ${ringClass} ${locked ? "cursor-not-allowed opacity-60" : "cursor-pointer"}`}
               >
                 <input
                   type="radio"
@@ -92,6 +120,7 @@ export default function QuestionCard({
                   value={choice.value}
                   checked={selected}
                   onChange={() => onAnswerChange(choice.value)}
+                  disabled={locked}
                   className="accent-primary"
                 />
                 <span className="text-sm font-medium text-muted">{choice.value})</span>
@@ -109,7 +138,12 @@ export default function QuestionCard({
             type="text"
             value={progress.userAnswer}
             onChange={(e) => onAnswerChange(e.target.value)}
+            disabled={locked}
             className={`w-full rounded-lg border p-3 text-sm text-foreground placeholder:text-muted focus:outline-none focus:ring-2 focus:ring-primary ${
+              locked
+                ? "cursor-not-allowed opacity-60"
+                : ""
+            } ${
               hasBeenChecked
                 ? isCorrect
                   ? "border-success bg-success-light"
@@ -121,29 +155,22 @@ export default function QuestionCard({
         </div>
       )}
 
-      {hasBeenChecked && (
-        <p
-          className={`text-sm font-semibold ${
-            isCorrect ? "text-success" : "text-error"
-          }`}
-        >
-          {isCorrect ? "Correct!" : "Incorrect — try again or view the explanation."}
+      {feedbackMessage && (
+        <p className={`text-sm font-semibold ${feedbackClass}`}>
+          {feedbackMessage}
         </p>
       )}
 
       <div className="flex flex-wrap gap-2">
-        <button
-          onClick={onCheckAnswer}
-          className="rounded-lg bg-primary px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-primary-hover"
-        >
-          Check Answer
-        </button>
-        <button
-          onClick={onSubmit}
-          className="rounded-lg border border-primary px-4 py-2 text-sm font-medium text-primary transition-colors hover:bg-primary hover:text-white"
-        >
-          Submit
-        </button>
+        {!locked && (
+          <button
+            onClick={onCheckAnswer}
+            disabled={!canAttempt}
+            className="rounded-lg bg-primary px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-primary-hover disabled:cursor-not-allowed disabled:opacity-50"
+          >
+            {attempts === 0 ? "Check Answer" : "Reattempt"}
+          </button>
+        )}
         <button
           onClick={onExplain}
           className="rounded-lg border border-border px-4 py-2 text-sm font-medium text-muted transition-colors hover:bg-surface"

@@ -12,8 +12,10 @@ import ProgressBar from "./ProgressBar";
 import QuestionNav from "./QuestionNav";
 import SectionHeader from "./SectionHeader";
 
+const MAX_ATTEMPTS = 3;
+
 function createEmptyProgress(): QuestionProgress {
-  return { userAnswer: "", scratchWork: "", isCorrect: null, explanationRevealed: false };
+  return { userAnswer: "", scratchWork: "", isCorrect: null, explanationRevealed: false, attempts: 0, locked: false };
 }
 
 interface SectionWithQuestions {
@@ -38,7 +40,6 @@ interface PracticeShellProps {
 export default function PracticeShell({ grade, mode }: PracticeShellProps) {
   const gradeLabel = grades.find((g) => g.value === grade)?.label ?? grade;
 
-  // Filter questions by grade level, then apply mode
   const gradeQuestions = useMemo(() => {
     const filtered = questions.filter((q) => q.gradeLevel === grade);
     if (mode === "random") {
@@ -47,7 +48,6 @@ export default function PracticeShell({ grade, mode }: PracticeShellProps) {
     return filtered;
   }, [grade, mode]);
 
-  // Build sections that have questions (for full mode), or a single flat section (for random mode)
   const activeSections: SectionWithQuestions[] = useMemo(() => {
     if (mode === "random") {
       return [
@@ -80,7 +80,6 @@ export default function PracticeShell({ grade, mode }: PracticeShellProps) {
   const sectionQuestions = currentSW?.questions ?? [];
   const question = sectionQuestions[questionIndex];
 
-  // Guard: no questions available for this grade
   if (!currentSW || sectionQuestions.length === 0 || !question) {
     return (
       <div className="mx-auto max-w-2xl space-y-6 px-4 py-8 text-center">
@@ -111,22 +110,53 @@ export default function PracticeShell({ grade, mode }: PracticeShellProps) {
   };
 
   const handleCheckAnswer = () => {
+    const p = progress[question.id] ?? createEmptyProgress();
+    if (p.locked) return;
+
+    const newAttempts = p.attempts + 1;
     const correct = checkAnswer(
-      questionProgress.userAnswer,
+      p.userAnswer,
       question.correctAnswer,
       question.answerType,
     );
-    updateProgress(question.id, { isCorrect: correct });
-  };
 
-  const handleSubmit = () => {
-    handleCheckAnswer();
+    if (correct) {
+      updateProgress(question.id, { isCorrect: true, attempts: newAttempts, locked: true });
+    } else if (newAttempts >= MAX_ATTEMPTS) {
+      updateProgress(question.id, { isCorrect: false, attempts: newAttempts, locked: true });
+    } else {
+      updateProgress(question.id, { isCorrect: false, attempts: newAttempts });
+    }
   };
 
   const handleExplain = () => {
-    updateProgress(question.id, {
-      explanationRevealed: !questionProgress.explanationRevealed,
-    });
+    const p = progress[question.id] ?? createEmptyProgress();
+    if (!p.explanationRevealed) {
+      // Revealing explanation for the first time
+      if (p.attempts === 0) {
+        // Never attempted — mark as incorrect and lock
+        updateProgress(question.id, { explanationRevealed: true, isCorrect: false, locked: true });
+      } else {
+        // Already attempted — just reveal, lock if not already correct
+        updateProgress(question.id, {
+          explanationRevealed: true,
+          locked: true,
+        });
+      }
+    } else {
+      // Toggle hide
+      updateProgress(question.id, { explanationRevealed: false });
+    }
+  };
+
+  // Compute section status for tab coloring
+  const getSectionStatus = (sw: SectionWithQuestions): "none" | "partial" | "complete" => {
+    const total = sw.questions.length;
+    if (total === 0) return "none";
+    const answered = sw.questions.filter((q) => progress[q.id]?.isCorrect !== null).length;
+    if (answered === 0) return "none";
+    if (answered === total) return "complete";
+    return "partial";
   };
 
   const goPrev = useCallback(() => {
@@ -184,22 +214,32 @@ export default function PracticeShell({ grade, mode }: PracticeShellProps) {
       {/* Section tabs — only show in full mode with multiple sections */}
       {mode === "full" && activeSections.length > 1 && (
         <div className="flex gap-2 overflow-x-auto pb-1">
-          {activeSections.map((sw, i) => (
-            <button
-              key={sw.section.id}
-              onClick={() => {
-                setSectionIndex(i);
-                setQuestionIndex(0);
-              }}
-              className={`shrink-0 rounded-full px-3 py-1 text-xs font-medium transition-colors ${
-                i === sectionIndex
-                  ? "bg-primary text-white"
-                  : "bg-muted-light text-muted hover:bg-border"
-              }`}
-            >
-              {sw.section.name}
-            </button>
-          ))}
+          {activeSections.map((sw, i) => {
+            const status = getSectionStatus(sw);
+            const isActive = i === sectionIndex;
+            let tabClass: string;
+            if (isActive) {
+              tabClass = "bg-primary text-white";
+            } else if (status === "complete") {
+              tabClass = "bg-success/20 text-success border border-success/30";
+            } else if (status === "partial") {
+              tabClass = "bg-amber-100 text-amber-700 border border-amber-300 dark:bg-amber-900/30 dark:text-amber-400 dark:border-amber-700";
+            } else {
+              tabClass = "bg-muted-light text-muted hover:bg-border";
+            }
+            return (
+              <button
+                key={sw.section.id}
+                onClick={() => {
+                  setSectionIndex(i);
+                  setQuestionIndex(0);
+                }}
+                className={`shrink-0 rounded-full px-3 py-1 text-xs font-medium transition-colors ${tabClass}`}
+              >
+                {sw.section.name}
+              </button>
+            );
+          })}
         </div>
       )}
 
@@ -219,10 +259,10 @@ export default function PracticeShell({ grade, mode }: PracticeShellProps) {
       <QuestionCard
         question={question}
         progress={questionProgress}
+        maxAttempts={MAX_ATTEMPTS}
         onAnswerChange={(answer) => updateProgress(question.id, { userAnswer: answer })}
         onScratchChange={(scratch) => updateProgress(question.id, { scratchWork: scratch })}
         onCheckAnswer={handleCheckAnswer}
-        onSubmit={handleSubmit}
         onExplain={handleExplain}
       />
 

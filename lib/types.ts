@@ -38,6 +38,8 @@ export interface QuestionProgress {
   scratchWork: string;
   isCorrect: boolean | null;
   explanationRevealed: boolean;
+  attempts: number;
+  locked: boolean;
 }
 
 export interface Section {
