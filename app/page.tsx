@@ -14,6 +14,11 @@ const competitions: { id: Competition; name: string; description: string }[] = [
     name: "MATHCOUNTS",
     description: "Practice problems from mathcounts.org — Sprint, Target, Team & Countdown.",
   },
+  {
+    id: "olympiad",
+    name: "Math Olympiad",
+    description: "Practice problems from olympiadusa.org — Preliminary rounds for grades 5 through 10.",
+  },
 ];
 
 export default function Home() {

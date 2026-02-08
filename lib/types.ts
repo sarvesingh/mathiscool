@@ -2,7 +2,7 @@ export type Difficulty = "easy" | "medium" | "hard";
 
 export type AnswerType = "integer" | "decimal" | "fraction" | "text" | "multiple-choice";
 
-export type Competition = "math-is-cool" | "mathcounts";
+export type Competition = "math-is-cool" | "mathcounts" | "olympiad";
 
 export interface ExplanationStep {
   label: string;
@@ -14,7 +14,7 @@ export interface Choice {
   value: string;
 }
 
-export type GradeLevel = "5" | "6" | "7-8" | "9-10";
+export type GradeLevel = "5" | "6" | "5-6" | "7-8" | "9-10";
 
 export interface GradeOption {
   value: GradeLevel;

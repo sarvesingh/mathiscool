@@ -33,4 +33,23 @@ export const grades: GradeOption[] = [
     description: "School, Chapter, and State level MATHCOUNTS problems",
     competition: "mathcounts",
   },
+  // Olympiad USA
+  {
+    value: "5-6",
+    label: "5th / 6th Grade",
+    description: "Arithmetic, geometry, fractions, and number sense",
+    competition: "olympiad",
+  },
+  {
+    value: "7-8",
+    label: "7th / 8th Grade",
+    description: "Pre-algebra, ratios, geometry, and problem solving",
+    competition: "olympiad",
+  },
+  {
+    value: "9-10",
+    label: "9th / 10th Grade",
+    description: "Algebra, combinatorics, geometry, and number theory",
+    competition: "olympiad",
+  },
 ];

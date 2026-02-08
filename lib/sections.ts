@@ -107,4 +107,19 @@ export const sections: Section[] = [
     order: 15,
     competition: "mathcounts",
   },
+  // Olympiad USA sections
+  {
+    id: "olympiad-dec-2024",
+    name: "December 2024",
+    description: "Preliminary Round 2 — 35 questions.",
+    order: 16,
+    competition: "olympiad",
+  },
+  {
+    id: "olympiad-jan-2025",
+    name: "January 2025",
+    description: "Preliminary Round — 35 questions.",
+    order: 17,
+    competition: "olympiad",
+  },
 ];
