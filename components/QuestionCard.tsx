@@ -180,7 +180,11 @@ export default function QuestionCard({
       </div>
 
       {progress.explanationRevealed && (
-        <ExplanationPanel steps={question.explanation} />
+        <ExplanationPanel
+          steps={question.explanation}
+          detailedSteps={question.detailedExplanation}
+          difficulty={question.difficulty}
+        />
       )}
     </div>
   );

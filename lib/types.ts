@@ -32,6 +32,7 @@ export interface Question {
   answerType: AnswerType;
   choices?: Choice[];
   explanation: ExplanationStep[];
+  detailedExplanation?: ExplanationStep[];
   tags: string[];
   difficulty: Difficulty;
 }
@@ -51,4 +52,16 @@ export interface Section {
   description: string;
   order: number;
   competition: Competition;
+}
+
+export interface HistoryEntry {
+  questionId: string;
+  questionText: string;
+  sectionName: string;
+  difficulty: Difficulty;
+  userAnswer: string;
+  correctAnswer: string;
+  isCorrect: boolean;
+  attempts: number;
+  timestamp: number;
 }

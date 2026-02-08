@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { grades } from "@/lib/grades";
 import { Competition } from "@/lib/types";
+import QuestionSearch from "@/components/QuestionSearch";
 
 const competitions: { id: Competition; name: string; description: string }[] = [
   {
@@ -24,6 +25,8 @@ export default function Home() {
           Choose a competition and grade level to start practicing.
         </p>
       </div>
+
+      <QuestionSearch />
 
       <div className="w-full max-w-3xl space-y-8">
         {competitions.map((comp) => {

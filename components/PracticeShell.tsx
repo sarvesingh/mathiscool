@@ -5,12 +5,13 @@ import Link from "next/link";
 import { questions } from "@/lib/questions";
 import { sections } from "@/lib/sections";
 import { checkAnswer } from "@/lib/answerChecker";
-import { QuestionProgress, Question, Section, GradeLevel, Competition } from "@/lib/types";
+import { QuestionProgress, Question, Section, GradeLevel, Competition, HistoryEntry } from "@/lib/types";
 import { grades } from "@/lib/grades";
 import QuestionCard from "./QuestionCard";
 import ProgressBar from "./ProgressBar";
 import QuestionNav from "./QuestionNav";
 import SectionHeader from "./SectionHeader";
+import { useSessionHistory } from "./SessionHistoryContext";
 
 const MAX_ATTEMPTS = 3;
 
@@ -112,8 +113,26 @@ export default function PracticeShell({ grade, mode, competition }: PracticeShel
     return sum;
   }, 0);
 
+  const { addEntry } = useSessionHistory();
+
   const updateProgress = (id: string, patch: Partial<QuestionProgress>) => {
     setProgress((prev) => ({ ...prev, [id]: { ...prev[id], ...patch } }));
+  };
+
+  const recordToHistory = (q: Question, userAnswer: string, isCorrect: boolean, attempts: number) => {
+    const sectionName = sections.find((s) => s.id === q.sectionId)?.name ?? "Unknown";
+    const entry: HistoryEntry = {
+      questionId: q.id,
+      questionText: q.questionText.length > 80 ? q.questionText.slice(0, 80) + "…" : q.questionText,
+      sectionName,
+      difficulty: q.difficulty,
+      userAnswer,
+      correctAnswer: q.correctAnswer,
+      isCorrect,
+      attempts,
+      timestamp: Date.now(),
+    };
+    addEntry(entry);
   };
 
   const handleCheckAnswer = () => {
@@ -129,10 +148,13 @@ export default function PracticeShell({ grade, mode, competition }: PracticeShel
 
     if (correct) {
       updateProgress(question.id, { isCorrect: true, attempts: newAttempts, locked: true });
+      recordToHistory(question, p.userAnswer, true, newAttempts);
     } else if (newAttempts >= MAX_ATTEMPTS) {
       updateProgress(question.id, { isCorrect: false, attempts: newAttempts, locked: true });
+      recordToHistory(question, p.userAnswer, false, newAttempts);
     } else {
       updateProgress(question.id, { isCorrect: false, attempts: newAttempts });
+      recordToHistory(question, p.userAnswer, false, newAttempts);
     }
   };
 
@@ -143,8 +165,16 @@ export default function PracticeShell({ grade, mode, competition }: PracticeShel
       if (p.attempts === 0) {
         // Never attempted — mark as incorrect and lock
         updateProgress(question.id, { explanationRevealed: true, isCorrect: false, locked: true });
+        recordToHistory(question, p.userAnswer, false, 0);
+      } else if (!p.locked) {
+        // Already attempted but not locked — lock and record
+        updateProgress(question.id, {
+          explanationRevealed: true,
+          locked: true,
+        });
+        recordToHistory(question, p.userAnswer, p.isCorrect === true, p.attempts);
       } else {
-        // Already attempted — just reveal, lock if not already correct
+        // Already locked — just reveal explanation
         updateProgress(question.id, {
           explanationRevealed: true,
           locked: true,
