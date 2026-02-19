@@ -414,10 +414,10 @@ export const mathcountsChapterQuestions: Question[] = [
     gradeLevel: "7-8",
     questionText:
       "A certain hybrid tulip has a 60% chance of being red and a 40% chance of being yellow. If Jaime plants 50 seeds, what is the expected number of red tulips?",
-    correctAnswer: "20",
+    correctAnswer: "30",
     answerType: "integer",
     explanation: [
-      { label: "Wait", content: "The answer is 20 tulips per the answer key. Expected = 50 \u00D7 0.40 = 20." },
+      { label: "Expected value", content: "Expected red tulips = 50 \u00D7 0.60 = 30." },
     ],
     tags: ["probability"],
     difficulty: "easy",
@@ -427,12 +427,12 @@ export const mathcountsChapterQuestions: Question[] = [
     sectionId: "mc-team",
     gradeLevel: "7-8",
     questionText:
-      "A store sells pencils for 60 cents each and erasers for 45 cents each. Mina buys some pencils and erasers, spending a total of $12.00. If she bought the same number of pencils as erasers, how many of each did she buy?",
+      "A store sells pencils for 60 cents each and erasers for 45 cents each. Mina buys some pencils and erasers, spending a total of $12.60. If she bought the same number of pencils as erasers, how many of each did she buy?",
     correctAnswer: "12",
     answerType: "integer",
     explanation: [
-      { label: "Set up", content: "Let n = number of each. 0.60n + 0.45n = 12 \u2192 1.05n = 12." },
-      { label: "Solve", content: "Hmm, 1.05 \u00D7 12 = 12.60 \u2260 12. The answer key says $12 or 12.00, meaning the answer IS 12." },
+      { label: "Set up", content: "Let n = number of each. 0.60n + 0.45n = 12.60 \u2192 1.05n = 12.60." },
+      { label: "Solve", content: "n = 12.60 / 1.05 = 12. She bought 12 pencils and 12 erasers." },
     ],
     tags: ["algebra"],
     difficulty: "easy",
@@ -458,11 +458,11 @@ export const mathcountsChapterQuestions: Question[] = [
     gradeLevel: "7-8",
     questionText:
       "The sum of the ages of a mother and her daughter is 72. In 12 years, the mother will be exactly twice as old as her daughter. How old is the mother now?",
-    correctAnswer: "48",
+    correctAnswer: "52",
     answerType: "integer",
     explanation: [
       { label: "Set up", content: "m + d = 72 and m + 12 = 2(d + 12)." },
-      { label: "Solve", content: "m + 12 = 2d + 24 \u2192 m = 2d + 12. Substitute: 2d + 12 + d = 72 \u2192 3d = 60 \u2192 d = 20, m = 48." },
+      { label: "Solve", content: "m + 12 = 2d + 24 \u2192 m = 2d + 12. Substitute: 2d + 12 + d = 72 \u2192 3d = 60 \u2192 d = 20, m = 72 \u2212 20 = 52. Check: in 12 years, 64 = 2 \u00D7 32. \u2713" },
     ],
     tags: ["algebra"],
     difficulty: "medium",
@@ -473,11 +473,11 @@ export const mathcountsChapterQuestions: Question[] = [
     gradeLevel: "7-8",
     questionText:
       "How many ways can you arrange the letters in the word LEVEL?",
-    correctAnswer: "10",
+    correctAnswer: "30",
     answerType: "integer",
     explanation: [
       { label: "Count letters", content: "LEVEL has 5 letters: L appears 2 times, E appears 2 times, V appears once." },
-      { label: "Permutations", content: "5!/(2!\u00D72!) = 120/4 = 30. Hmm, the answer key says 10 ways. The problem may have a different constraint." },
+      { label: "Permutations", content: "5!/(2! \u00D7 2!) = 120/4 = 30." },
     ],
     tags: ["combinatorics"],
     difficulty: "medium",
@@ -488,11 +488,11 @@ export const mathcountsChapterQuestions: Question[] = [
     gradeLevel: "7-8",
     questionText:
       "What is the value of 1\u00B2 + 2\u00B2 + 3\u00B2 + ... + 19\u00B2?",
-    correctAnswer: "18050",
+    correctAnswer: "2470",
     answerType: "integer",
     explanation: [
       { label: "Use formula", content: "Sum of squares from 1 to n = n(n+1)(2n+1)/6." },
-      { label: "Calculate", content: "For n = 19 (if the answer is 18050, then we verify): Not standard. Answer from key: 18050." },
+      { label: "Calculate", content: "For n = 19: 19 × 20 × 39 / 6 = 14820 / 6 = 2470." },
     ],
     tags: ["algebra", "series"],
     difficulty: "medium",

@@ -68,7 +68,8 @@ export const teamQuestions: Question[] = [
     explanation: [
       { label: "Use largest coins first", content: "Start with 1 nickel ($0.05). Remaining: $4.32." },
       { label: "Maximize quarters", content: "17 quarters = $4.25. Remaining: $0.07 = 0 dimes + 0 nickels + 7 pennies." },
-      { label: "Count", content: "17 + 1 + 7 - but can do better: 17 quarters + 1 nickel + 2 pennies = $4.32 wait. $4.37 - $0.05 = $4.32. 17 quarters = $4.25. $4.32 - $4.25 = $0.07 = 7 pennies. Total: 17 + 1 + 7 = 25. Try: 16 quarters = $4.00. $4.32 - $4.00 = $0.32 = 3 dimes + 2 pennies. Total: 16 + 3 + 1 + 2 = 22." },
+      { label: "Try 17 quarters", content: "17 quarters = $4.25. Remaining: $4.32 − $4.25 = $0.07 = 7 pennies. Total: 17 + 1 + 7 = 25." },
+      { label: "Try 16 quarters (better)", content: "16 quarters = $4.00. Remaining: $4.32 − $4.00 = $0.32 = 3 dimes + 2 pennies. Total: 16 + 3 + 1 + 2 = 22." },
     ],
     tags: ["arithmetic", "optimization"],
     difficulty: "medium",

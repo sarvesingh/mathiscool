@@ -345,10 +345,10 @@ export const collegeBowlQuestions: Question[] = [
     gradeLevel: "7-8",
     sectionId: "cb-round-3",
     questionText: "How many integers are greater than 7.9 and less than 31.1?",
-    correctAnswer: "23",
+    correctAnswer: "24",
     answerType: "integer",
     explanation: [
-      { label: "Count", content: "Integers 8, 9, 10, …, 31. Count = 31 − 8 + 1 = 24. Wait: check — 8 through 31 inclusive = 24." },
+      { label: "Count", content: "Integers greater than 7.9 and less than 31.1: 8, 9, 10, …, 31. Count = 31 − 8 + 1 = 24." },
     ],
     tags: ["arithmetic"],
     difficulty: "easy",

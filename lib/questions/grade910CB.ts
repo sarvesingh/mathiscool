@@ -200,11 +200,11 @@ export const grade910CBQuestions: Question[] = [
     gradeLevel: "9-10",
     questionText:
       "Diego is throwing a party and buys 546 pieces of candy. He distributes all candy equally, with each person (including himself) getting the same number. If the number of people present is odd, what is the smallest number of people that could be present?",
-    correctAnswer: "7",
+    correctAnswer: "3",
     answerType: "integer",
     explanation: [
-      { label: "Factor", content: "546 = 2 × 3 × 7 × 13. Need odd divisor ≥ 5 (at least 4 friends + Diego)." },
-      { label: "Odd divisors", content: "Odd divisors of 546 = divisors of 273 = 3 × 7 × 13: {1, 3, 7, 13, 21, 39, 91, 273}. Smallest ≥ 5: 7." },
+      { label: "Factor", content: "546 = 2 × 3 × 7 × 13. We need the smallest odd divisor of 546 that is at least 2 (since it's a party)." },
+      { label: "Odd divisors", content: "Odd divisors of 546 = divisors of 273 = 3 × 7 × 13: {1, 3, 7, 13, 21, 39, 91, 273}. Smallest ≥ 2: 3." },
     ],
     tags: ["number theory"],
     difficulty: "medium",
