@@ -41,7 +41,13 @@ interface PracticeShellProps {
 
 export default function PracticeShell({ grade, mode, competition }: PracticeShellProps) {
   const gradeLabel = grades.find((g) => g.value === grade && g.competition === competition)?.label ?? grade;
-  const competitionName = competition === "mathcounts" ? "MATHCOUNTS" : "Math Is Cool";
+  const competitionName = competition === "mathcounts"
+    ? "MATHCOUNTS"
+    : competition === "chapter-practice"
+      ? "Chapter Practice"
+      : competition === "olympiad"
+        ? "Math Olympiad"
+        : "Math Is Cool";
 
   const gradeQuestions = useMemo(() => {
     const filtered = questions.filter((q) => q.gradeLevel === grade);

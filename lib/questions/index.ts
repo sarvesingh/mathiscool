@@ -17,6 +17,7 @@ import { grade910CBQuestions } from "./grade910CB";
 import { olympiad56Questions } from "./olympiad56";
 import { olympiad78Questions } from "./olympiad78";
 import { olympiad910Questions } from "./olympiad910";
+import { chapter5Questions } from "./chapter5";
 import { Question } from "../types";
 
 export const questions: Question[] = [
@@ -39,4 +40,5 @@ export const questions: Question[] = [
   ...olympiad56Questions,
   ...olympiad78Questions,
   ...olympiad910Questions,
+  ...chapter5Questions,
 ];

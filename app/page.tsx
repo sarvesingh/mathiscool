@@ -18,6 +18,11 @@ const competitions: { id: Competition; name: string; description: string }[] = [
     name: "Math Olympiad",
     description: "Practice problems from olympiadusa.org — Preliminary rounds for grades 5 through 10.",
   },
+  {
+    id: "chapter-practice",
+    name: "Chapter Practice",
+    description: "Extra practice and homework — chapter-by-chapter review for test prep.",
+  },
 ];
 
 export default function Home() {

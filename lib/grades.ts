@@ -52,4 +52,11 @@ export const grades: GradeOption[] = [
     description: "Algebra, combinatorics, geometry, and number theory",
     competition: "olympiad",
   },
+  // Chapter Practice
+  {
+    value: "4",
+    label: "4th Grade",
+    description: "Chapter 5: Conversion of Measurements — length, weight, volume, mass, and time",
+    competition: "chapter-practice",
+  },
 ];
