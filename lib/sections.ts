@@ -172,4 +172,7 @@ export const sections: Section[] = [
     order: 24,
     competition: "chapter-practice",
   },
+  { id: "chp6-area-unknown-sides", name: "Activity 1: Area and Unknown Sides", description: "Find perimeter and area of rectangles and squares, and solve for unknown sides.", order: 25, competition: "chapter-practice" },
+  { id: "chp6-composite-figures", name: "Activity 2: Composite Figures", description: "Find perimeter and area of L-shaped and step-shaped figures.", order: 26, competition: "chapter-practice" },
+  { id: "chp6-real-world-area", name: "Activity 3: Real-World Problems", description: "Solve word problems about area and perimeter with borders, paths, and frames.", order: 27, competition: "chapter-practice" },
 ];

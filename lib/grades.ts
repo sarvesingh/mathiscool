@@ -56,7 +56,7 @@ export const grades: GradeOption[] = [
   {
     value: "4",
     label: "4th Grade",
-    description: "Chapter 5: Conversion of Measurements — length, weight, volume, mass, and time",
+    description: "Ch 5: Conversion of Measurements | Ch 6: Area and Perimeter",
     competition: "chapter-practice",
   },
 ];

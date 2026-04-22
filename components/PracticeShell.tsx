@@ -10,6 +10,7 @@ import { grades } from "@/lib/grades";
 import QuestionCard from "./QuestionCard";
 import ProgressBar from "./ProgressBar";
 import QuestionNav from "./QuestionNav";
+import ConversionSheet from "./ConversionSheet";
 import SectionHeader from "./SectionHeader";
 import { useSessionHistory } from "./SessionHistoryContext";
 
@@ -48,6 +49,9 @@ export default function PracticeShell({ grade, mode, competition }: PracticeShel
       : competition === "olympiad"
         ? "Math Olympiad"
         : "Math Is Cool";
+
+  const isChapterPractice = competition === "chapter-practice";
+  const effectiveMaxAttempts = isChapterPractice ? Infinity : MAX_ATTEMPTS;
 
   const gradeQuestions = useMemo(() => {
     const filtered = questions.filter((q) => q.gradeLevel === grade);
@@ -155,12 +159,11 @@ export default function PracticeShell({ grade, mode, competition }: PracticeShel
     if (correct) {
       updateProgress(question.id, { isCorrect: true, attempts: newAttempts, locked: true });
       recordToHistory(question, p.userAnswer, true, newAttempts);
-    } else if (newAttempts >= MAX_ATTEMPTS) {
+    } else if (newAttempts >= effectiveMaxAttempts) {
       updateProgress(question.id, { isCorrect: false, attempts: newAttempts, locked: true });
       recordToHistory(question, p.userAnswer, false, newAttempts);
     } else {
       updateProgress(question.id, { isCorrect: false, attempts: newAttempts });
-      recordToHistory(question, p.userAnswer, false, newAttempts);
     }
   };
 
@@ -168,7 +171,9 @@ export default function PracticeShell({ grade, mode, competition }: PracticeShel
     const p = progress[question.id] ?? createEmptyProgress();
     if (!p.explanationRevealed) {
       // Revealing explanation for the first time
-      if (p.attempts === 0) {
+      if (isChapterPractice) {
+        updateProgress(question.id, { explanationRevealed: true });
+      } else if (p.attempts === 0) {
         // Never attempted — mark as incorrect and lock
         updateProgress(question.id, { explanationRevealed: true, isCorrect: false, locked: true });
         recordToHistory(question, p.userAnswer, false, 0);
@@ -302,12 +307,14 @@ export default function PracticeShell({ grade, mode, competition }: PracticeShel
       <QuestionCard
         question={question}
         progress={questionProgress}
-        maxAttempts={MAX_ATTEMPTS}
+        maxAttempts={isChapterPractice ? Infinity : MAX_ATTEMPTS}
         onAnswerChange={(answer) => updateProgress(question.id, { userAnswer: answer })}
         onScratchChange={(scratch) => updateProgress(question.id, { scratchWork: scratch })}
         onCheckAnswer={handleCheckAnswer}
         onExplain={handleExplain}
       />
+
+      {competition === "chapter-practice" && <ConversionSheet />}
 
       <QuestionNav
         currentIndex={questionIndex}

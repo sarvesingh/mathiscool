@@ -33,6 +33,7 @@ export interface Question {
   choices?: Choice[];
   explanation: ExplanationStep[];
   detailedExplanation?: ExplanationStep[];
+  diagram?: string;
   tags: string[];
   difficulty: Difficulty;
 }

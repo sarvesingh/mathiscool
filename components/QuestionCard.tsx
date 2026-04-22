@@ -24,14 +24,18 @@ export default function QuestionCard({
   const hasBeenChecked = isCorrect !== null;
   const isMultipleChoice = question.answerType === "multiple-choice" && question.choices;
   const attemptsRemaining = maxAttempts - attempts;
+  const unlimitedMode = !isFinite(maxAttempts);
   const canAttempt = !locked && progress.userAnswer.trim().length > 0;
 
-  // Feedback message
   let feedbackMessage = "";
   let feedbackClass = "";
   if (hasBeenChecked) {
     if (isCorrect) {
-      if (attempts === 1) {
+      if (unlimitedMode) {
+        feedbackMessage = attempts === 1
+          ? "Correct! Great job!"
+          : `Correct on attempt ${attempts}! Keep it up!`;
+      } else if (attempts === 1) {
         feedbackMessage = "Correct! Full credit.";
       } else {
         feedbackMessage = `Correct on attempt ${attempts}! Half credit.`;
@@ -39,15 +43,21 @@ export default function QuestionCard({
       feedbackClass = "text-success";
     } else if (locked) {
       if (progress.explanationRevealed && attempts === 0) {
-        feedbackMessage = "Explanation viewed without attempting. No credit.";
+        feedbackMessage = unlimitedMode
+          ? "Read the explanation and try the next one!"
+          : "Explanation viewed without attempting. No credit.";
       } else if (attempts >= maxAttempts) {
         feedbackMessage = `Incorrect after ${maxAttempts} attempts. No credit.`;
       } else {
-        feedbackMessage = "Explanation viewed. No further attempts.";
+        feedbackMessage = unlimitedMode
+          ? "Check out the explanation to learn how to solve it!"
+          : "Explanation viewed. No further attempts.";
       }
-      feedbackClass = "text-error";
+      feedbackClass = unlimitedMode ? "text-muted" : "text-error";
     } else {
-      feedbackMessage = `Incorrect. ${attemptsRemaining} attempt${attemptsRemaining === 1 ? "" : "s"} remaining (half credit).`;
+      feedbackMessage = unlimitedMode
+        ? `Not quite! Try again. (Attempt ${attempts})`
+        : `Incorrect. ${attemptsRemaining} attempt${attemptsRemaining === 1 ? "" : "s"} remaining (half credit).`;
       feedbackClass = "text-error";
     }
   }
@@ -82,6 +92,13 @@ export default function QuestionCard({
           {question.difficulty}
         </span>
       </div>
+
+      {question.diagram && (
+        <div
+          className="flex justify-center rounded-lg border border-border bg-white p-4 dark:bg-surface"
+          dangerouslySetInnerHTML={{ __html: question.diagram }}
+        />
+      )}
 
       <div>
         <label className="mb-1 block text-sm font-medium text-muted">
