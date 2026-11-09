@@ -54,12 +54,17 @@ export default function PracticeShell({ grade, mode, competition }: PracticeShel
   const effectiveMaxAttempts = isChapterPractice ? Infinity : MAX_ATTEMPTS;
 
   const gradeQuestions = useMemo(() => {
-    const filtered = questions.filter((q) => q.gradeLevel === grade);
+    const competitionSectionIds = new Set(
+      sections.filter((s) => s.competition === competition).map((s) => s.id),
+    );
+    const filtered = questions.filter(
+      (q) => q.gradeLevel === grade && competitionSectionIds.has(q.sectionId),
+    );
     if (mode === "random") {
       return shuffleArray(filtered).slice(0, 20);
     }
     return filtered;
-  }, [grade, mode]);
+  }, [grade, mode, competition]);
 
   const activeSections: SectionWithQuestions[] = useMemo(() => {
     if (mode === "random") {
@@ -314,7 +319,7 @@ export default function PracticeShell({ grade, mode, competition }: PracticeShel
         onExplain={handleExplain}
       />
 
-      {competition === "chapter-practice" && <ConversionSheet />}
+      {competition === "chapter-practice" && grade === "4" && <ConversionSheet />}
 
       <QuestionNav
         currentIndex={questionIndex}

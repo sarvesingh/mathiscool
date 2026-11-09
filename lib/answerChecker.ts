@@ -25,6 +25,55 @@ function normalizeFraction(input: string): string | null {
 
 const DECIMAL_TOLERANCE = 0.001;
 
+interface ParsedMixed {
+  num: number; // improper numerator
+  den: number;
+  simplest: boolean;
+  improper: boolean;
+}
+
+// Accepts "5", "3/4", "2 5/12". Simplest form = whole number, proper reduced
+// fraction, or whole + proper reduced fraction.
+export function parseMixedNumber(input: string): ParsedMixed | null {
+  const s = input.trim().replace(/\s+/g, " ");
+  let m = s.match(/^(\d+)$/);
+  if (m) return { num: parseInt(m[1], 10), den: 1, simplest: true, improper: false };
+  m = s.match(/^(\d+)\s*\/\s*(\d+)$/);
+  if (m) {
+    const n = parseInt(m[1], 10);
+    const d = parseInt(m[2], 10);
+    if (d === 0) return null;
+    const improper = n >= d;
+    return { num: n, den: d, simplest: !improper && n > 0 && gcd(n, d) === 1, improper };
+  }
+  m = s.match(/^(\d+) (\d+)\s*\/\s*(\d+)$/);
+  if (m) {
+    const w = parseInt(m[1], 10);
+    const n = parseInt(m[2], 10);
+    const d = parseInt(m[3], 10);
+    if (d === 0) return null;
+    const improper = n >= d;
+    return { num: w * d + n, den: d, simplest: !improper && n > 0 && gcd(n, d) === 1, improper };
+  }
+  return null;
+}
+
+function sameValue(a: ParsedMixed, b: ParsedMixed): boolean {
+  return a.num * b.den === b.num * a.den;
+}
+
+// When the amount is right but not in simplest form, returns a nudge to show
+// the student instead of a plain "wrong".
+export function mixedNumberHint(userInput: string, correctAnswer: string): string | null {
+  const u = parseMixedNumber(userInput);
+  const c = parseMixedNumber(correctAnswer);
+  if (!u || !c || !sameValue(u, c) || u.simplest) return null;
+  if (u.improper) {
+    return "Right amount! The fraction part is 1 or more, so turn it into a whole number plus a fraction.";
+  }
+  return "Right amount! Now simplify the fraction: divide the top and bottom by the same number.";
+}
+
 export function checkAnswer(
   userInput: string,
   correctAnswer: string,
@@ -55,6 +104,11 @@ export function checkAnswer(
         return Math.abs(userFloat - correctFloat) < DECIMAL_TOLERANCE;
       }
       return false;
+    }
+    case "mixed-number": {
+      const u = parseMixedNumber(trimmed);
+      const c = parseMixedNumber(correctAnswer);
+      return !!u && !!c && u.simplest && sameValue(u, c);
     }
     case "multiple-choice": {
       return trimmed.toUpperCase() === correctAnswer.toUpperCase();

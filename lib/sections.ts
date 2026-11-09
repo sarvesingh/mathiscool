@@ -175,4 +175,12 @@ export const sections: Section[] = [
   { id: "chp6-area-unknown-sides", name: "Activity 1: Area and Unknown Sides", description: "Find perimeter and area of rectangles and squares, and solve for unknown sides.", order: 25, competition: "chapter-practice" },
   { id: "chp6-composite-figures", name: "Activity 2: Composite Figures", description: "Find perimeter and area of L-shaped and step-shaped figures.", order: 26, competition: "chapter-practice" },
   { id: "chp6-real-world-area", name: "Activity 3: Real-World Problems", description: "Solve word problems about area and perimeter with borders, paths, and frames.", order: 27, competition: "chapter-practice" },
+  // Chapter 2: Fractions and Mixed Numbers (Grade 5)
+  { id: "chp2g5-division-simplest", name: "Activity 1: Fractions, Division & Simplest Form", description: "Fractions as division, mixed numbers and improper fractions, and writing answers in simplest form.", order: 30, competition: "chapter-practice" },
+  { id: "chp2g5-adding", name: "Activity 2: Adding Mixed Numbers", description: "Add fractions and mixed numbers with unlike denominators, including when the fractions add up to more than 1.", order: 31, competition: "chapter-practice" },
+  { id: "chp2g5-subtracting", name: "Activity 3: Subtracting with Regrouping", description: "Subtract mixed numbers when you need to borrow a whole.", order: 32, competition: "chapter-practice" },
+  { id: "chp2g5-word-problems", name: "Activity 4: Multi-Step Word Problems", description: "What is left, what is still needed, and is there enough?", order: 33, competition: "chapter-practice" },
+  { id: "chp2g5-benchmarks", name: "Activity 5: Estimate with Benchmarks", description: "Use 0, 1/2 and 1 and whole-number estimates to check if an answer makes sense.", order: 34, competition: "chapter-practice" },
+  { id: "chp2g5-test-a", name: "Practice Test A Redo", description: "Every question from Practice Test A, to try again.", order: 35, competition: "chapter-practice" },
+  { id: "chp2g5-test-b", name: "Practice Test B Redo", description: "Every question from Practice Test B, to try again.", order: 36, competition: "chapter-practice" },
 ];

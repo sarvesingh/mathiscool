@@ -59,4 +59,10 @@ export const grades: GradeOption[] = [
     description: "Ch 5: Conversion of Measurements | Ch 6: Area and Perimeter",
     competition: "chapter-practice",
   },
+  {
+    value: "5",
+    label: "5th Grade",
+    description: "Ch 2: Fractions and Mixed Numbers",
+    competition: "chapter-practice",
+  },
 ];

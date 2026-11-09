@@ -1,5 +1,6 @@
 import { Question, QuestionProgress } from "@/lib/types";
 import ExplanationPanel from "./ExplanationPanel";
+import { mixedNumberHint } from "@/lib/answerChecker";
 
 interface QuestionCardProps {
   question: Question;
@@ -60,6 +61,15 @@ export default function QuestionCard({
         : `Incorrect. ${attemptsRemaining} attempt${attemptsRemaining === 1 ? "" : "s"} remaining (half credit).`;
       feedbackClass = "text-error";
     }
+  }
+
+  const simplestFormHint =
+    hasBeenChecked && !isCorrect && !locked && question.answerType === "mixed-number"
+      ? mixedNumberHint(progress.userAnswer, question.correctAnswer)
+      : null;
+  if (simplestFormHint) {
+    feedbackMessage = simplestFormHint;
+    feedbackClass = "text-amber-600 dark:text-amber-400";
   }
 
   return (
@@ -167,7 +177,7 @@ export default function QuestionCard({
                   : "border-error bg-error-light"
                 : "border-border bg-surface"
             }`}
-            placeholder={`Enter your answer (${question.answerType})`}
+            placeholder={question.answerType === "mixed-number" ? "Simplest form, like 2 5/12 or 3/4 or 6" : `Enter your answer (${question.answerType})`}
           />
         </div>
       )}

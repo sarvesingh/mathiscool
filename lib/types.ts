@@ -1,6 +1,6 @@
 export type Difficulty = "easy" | "medium" | "hard";
 
-export type AnswerType = "integer" | "decimal" | "fraction" | "text" | "multiple-choice";
+export type AnswerType = "integer" | "decimal" | "fraction" | "mixed-number" | "text" | "multiple-choice";
 
 export type Competition = "math-is-cool" | "mathcounts" | "olympiad" | "chapter-practice";
 
